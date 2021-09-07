@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <meta name="viewport" content="width=device-width">
@@ -9,25 +9,77 @@
   <!-- pickadate -->
   <link rel="stylesheet" href="css/default.css" />
   <link rel="stylesheet" href="css/default.date.css" />
+  <!-- animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css?family=Londrina+Shadow|Questrial" rel="stylesheet">
+  <!-- custom css -->
+  <style>
+    h1 {
+      font-family: 'Londrina Shadow';
+      color: slategray;
+      font-size: 3.5em;
+      display: inline-block;
+    }
+    body {
+      font-family: 'Questrial';
+    }
+    h1.animated {
+      display: inline-block;
+    }
+    .ball{
+      visibility: hidden;
+    }
+  </style>
 </head>
 <body>
-
 <!-- content -->
+<div id="toast" class="toast hide">
+  <div class="toast-header">
+    <strong class="mr-auto" id="product"></strong>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Please choose a color
+  </div>
+</div>
 <div class="container">
-  <h1>Happy Birthday!</h1><hr />
+  <h1 id="animations">Happy Birthday!</h1><hr />
   <form role="form">
     <div class="row">
       <div class="col-sm">
-        col 1
-        <div class="col-sm">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter name">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+          <label for="birthday">Birthday</label>
+          <input type="text" class="form-control" id="birthday" placeholder="Enter birthday" />
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Select your favorite balloons</h5>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="CheckAllBoxes">
+              <label class="form-check-label" for="CheckAllBoxes">Check/uncheck all boxes</label>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="red">
+              <label class="form-check-label" for="red">Red balloons</label>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="green">
+              <label class="form-check-label" for="green">Green balloons</label>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="blue">
+              <label class="form-check-label" for="blue">Blue balloons</label>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="birthday">Birthday</label>
-            <input type="text" class="form-control" id="birthday" placeholder="Enter birthday" />
-          </div>
+        </div>
+        <button type="button" class="btn btn-outline-primary mt-3" id="submit">Submit</button>
       </div>
       <div class="col-sm">
         <img src="media/red.png" class="ball" alt="red balloon" id="redImg" />
@@ -37,7 +89,6 @@
     </div>
   </form>
 </div>
-
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <!-- popper -->
